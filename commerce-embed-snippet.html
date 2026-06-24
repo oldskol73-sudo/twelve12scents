@@ -1,0 +1,33 @@
+<!-- ============================================================
+     Twelve Scents — paste this into a Custom HTML element on your
+     Zoho Commerce page. Replace YOUR-HOSTED-URL with the real URL
+     where you uploaded index.html (keep the trailing slash).
+     The iframe auto-resizes to the app's height (no inner scrollbar).
+     ============================================================ -->
+<div style="width:100%;">
+  <iframe id="ts-embed"
+          src="https://YOUR-HOSTED-URL/"
+          title="Twelve Scents"
+          loading="lazy"
+          scrolling="no"
+          style="display:block;width:100%;height:1200px;border:0;overflow:hidden;"></iframe>
+</div>
+<script>
+(function () {
+  var KEY = '__twelveScents';
+  var iframe = document.getElementById('ts-embed');
+  window.addEventListener('message', function (ev) {
+    if (!ev.data || ev.data.ns !== KEY) return;
+    if (ev.source !== iframe.contentWindow) return;      // only our own frame
+    if (ev.data.type === 'height' && ev.data.height) {
+      iframe.style.height = ev.data.height + 'px';        // grow to content
+    } else if (ev.data.type === 'scrollTop') {
+      try { iframe.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      catch (e) { iframe.scrollIntoView(); }              // app's internal nav -> top
+    }
+  });
+  iframe.addEventListener('load', function () {
+    try { iframe.contentWindow.postMessage({ ns: KEY, type: 'requestHeight' }, '*'); } catch (e) {}
+  });
+})();
+</script>
