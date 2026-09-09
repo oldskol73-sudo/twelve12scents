@@ -78,7 +78,7 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
-/* ---- WooCommerce ---- */
+/* ---- WooCommerce products ---- */
 .woocommerce .wc-block-grid__product,
 .woocommerce ul.products li.product,
 .wc-block-grid__product {
@@ -190,15 +190,55 @@ h1, h2, h3, h4 {
   color: var(--ts-accent);
 }
 
-/* Category tiles on shop */
-.woocommerce ul.products li.product-category .woocommerce-loop-category__title {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 600;
+/* ---- product_categories shortcode ---- */
+.woocommerce ul.product-categories {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+.woocommerce ul.product-categories li {
+  background: var(--ts-surf);
+  border: 1px solid var(--ts-border);
+  text-align: center;
+  padding: 0 0 24px;
+  transition: box-shadow 0.2s ease;
+}
+.woocommerce ul.product-categories li:hover {
+  box-shadow: 0 4px 20px rgba(38,34,28,0.1);
+}
+.woocommerce ul.product-categories li a img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 16px;
+}
+.woocommerce ul.product-categories li a {
+  text-decoration: none;
   color: var(--ts-ink);
 }
+.woocommerce ul.product-categories li .woocommerce-loop-category__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ts-ink);
+  padding: 0 16px;
+  display: block;
+}
+.woocommerce ul.product-categories li mark {
+  background: none;
+  color: var(--ts-accent);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  display: block;
+  margin-top: 4px;
+}
 
-/* Footer */
+/* ---- Footer ---- */
 .site-footer,
 #colophon {
   background-color: var(--ts-nav) !important;
@@ -212,7 +252,7 @@ h1, h2, h3, h4 {
   color: var(--ts-accent) !important;
 }
 
-/* Elementor section overrides */
+/* ---- Elementor overrides ---- */
 .elementor-widget-heading .elementor-heading-title {
   font-family: var(--font-display);
 }
