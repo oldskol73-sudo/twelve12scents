@@ -1,0 +1,223 @@
+/* ============================================================
+   Twelve Scents – Global Brand Styles
+   ============================================================ */
+
+:root {
+  --ts-bg:        #F4EFE7;
+  --ts-surf:      #FBF8F3;
+  --ts-bg-alt:    #EDE6D8;
+  --ts-ink:       #26221C;
+  --ts-nav:       #221C15;
+  --ts-accent:    #A9822F;
+  --ts-accent-lt: #CBA85B;
+  --ts-muted:     #5C5246;
+  --ts-border:    #EAE3D6;
+  --ts-on-dark:   #F1ECE1;
+  --ts-nav-h:     72px;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Manrope', system-ui, sans-serif;
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+html, body {
+  background-color: var(--ts-bg);
+  color: var(--ts-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--ts-accent); }
+a:hover { color: var(--ts-accent-lt); }
+
+/* ---- Header / Nav ---- */
+.site-header,
+.header-main,
+#masthead,
+.ts-site-header {
+  background-color: var(--ts-nav) !important;
+  border-bottom: 1px solid rgba(241,236,225,0.08);
+}
+
+.site-header a,
+.header-main a,
+#masthead a,
+.ts-site-header a,
+.main-navigation a {
+  color: var(--ts-on-dark) !important;
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.site-header a:hover,
+#masthead a:hover,
+.ts-site-header a:hover,
+.main-navigation a:hover {
+  color: var(--ts-accent) !important;
+}
+
+.site-title a,
+.ts-site-title a {
+  font-family: var(--font-display) !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: none !important;
+  color: var(--ts-on-dark) !important;
+}
+
+/* ---- Headings ---- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ts-ink);
+  text-wrap: balance;
+}
+
+/* ---- WooCommerce ---- */
+.woocommerce .wc-block-grid__product,
+.woocommerce ul.products li.product,
+.wc-block-grid__product {
+  border: 1px solid var(--ts-border);
+  background: var(--ts-surf);
+  transition: box-shadow 0.2s ease;
+  border-radius: 0;
+}
+
+.woocommerce ul.products li.product:hover,
+.wc-block-grid__product:hover {
+  box-shadow: 0 4px 20px rgba(38,34,28,0.1);
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.wc-block-grid__product-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ts-ink);
+}
+
+.woocommerce ul.products li.product .price,
+.wc-block-grid__product-price {
+  color: var(--ts-accent);
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+/* Add to Cart buttons */
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit,
+.woocommerce .button.alt,
+.wc-block-components-button,
+.wp-block-button__link {
+  background-color: var(--ts-accent) !important;
+  color: var(--ts-on-dark) !important;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 0 !important;
+  border: none !important;
+  padding: 14px 28px !important;
+  transition: background-color 0.2s ease;
+}
+
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce .button.alt:hover {
+  background-color: var(--ts-accent-lt) !important;
+  color: var(--ts-on-dark) !important;
+}
+
+/* Cart / Checkout */
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-checkout #place_order {
+  background-color: var(--ts-accent) !important;
+  border-radius: 0 !important;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select {
+  border: 1px solid var(--ts-border);
+  border-radius: 0;
+  background: var(--ts-surf);
+  font-family: var(--font-body);
+  color: var(--ts-ink);
+}
+
+.woocommerce form .form-row input.input-text:focus,
+.woocommerce form .form-row textarea:focus {
+  border-color: var(--ts-accent);
+  outline: none;
+  box-shadow: none;
+}
+
+/* Product single */
+.woocommerce div.product .product_title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 42px;
+  color: var(--ts-ink);
+}
+
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+  color: var(--ts-accent);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* WooCommerce notices */
+.woocommerce-message,
+.woocommerce-info {
+  border-top-color: var(--ts-accent);
+}
+
+.woocommerce-message::before,
+.woocommerce-info::before {
+  color: var(--ts-accent);
+}
+
+/* Category tiles on shop */
+.woocommerce ul.products li.product-category .woocommerce-loop-category__title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ts-ink);
+}
+
+/* Footer */
+.site-footer,
+#colophon {
+  background-color: var(--ts-nav) !important;
+  color: var(--ts-on-dark);
+  border-top: 1px solid rgba(241,236,225,0.08);
+  font-family: var(--font-body);
+}
+
+.site-footer a,
+#colophon a {
+  color: var(--ts-accent) !important;
+}
+
+/* Elementor section overrides */
+.elementor-widget-heading .elementor-heading-title {
+  font-family: var(--font-display);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--ts-bg-alt); }
+::-webkit-scrollbar-thumb { background: var(--ts-accent); border-radius: 0; }
